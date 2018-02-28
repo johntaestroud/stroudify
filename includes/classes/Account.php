@@ -63,6 +63,20 @@
 
 		private funtion validatePassword($pw, $pw2) {
 			
+			if($pw != $pw2) {
+				array_push($this->errorArray, "Your passwords don't match");
+				return;
+			}
+			//^not within range
+			if(preg_match('/[^A-Za-z0-9]/', $pw)) {
+				array_push($this->errorArray, "Your passwords can only contain letters and numbers");
+				return;
+			}
+
+			if(strlen($pw) > 30 || strlen($pw) < 5) {
+    			array_push($this->errorArray, "Your password must be between 5 and 30 characters");
+    			return;
+    		}
 		}
     }
 
