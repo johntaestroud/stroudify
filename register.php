@@ -1,41 +1,6 @@
 <?php
-
-function sanitizeFormPassword($inputText) {
-	$inputText = strip_tags($inputText);
-	return $inputText
-}
-
-function sanitizeFormUsername($inputText) {
-	$username = strip_tags($username);
-	$username = str_replace(" ", "", $username);//find & replace every space
-	return $inputText
-}
-
-function sanitizeFormString($inputText) {
-	$inputText = strip_tags($inputText);
-	$inputText = str_replace(" ", "", $inputText);
-	$inputText = ucfirst(strtolower($inputText));// converts all strings to lowercase first and then uppercase
-	return $inputText;
-}
-
-
-if(isset($_POST['loginButton'])) {
-
-}
-
-if(isset($_POST['registerButton'])) {
-	//register button was pressed
-	$username = sanitizeFormUsername($_POST['username']);
-	$firstName = sanitizeFormString($_POST['firstName']);
-	$lastName = sanitizeFormString($_POST['lastName']);
-	$email = sanitizeFormString($_POST['email']);
-	$email2 = sanitizeFormString($_POST['email2']);
-	$password = sanitizeFormPassword($_POST['password']);
-	$password2 = sanitizeFormPassword($_POST['password2']);	
-
-
-}
-
+	include("includes/handlers/register-handler.php");
+	include("includes/handlers/login-handler.php");
 
 ?>
 
@@ -44,7 +9,7 @@ if(isset($_POST['registerButton'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Welcome to Stroudify</title>
 </head>
 <body>
 
