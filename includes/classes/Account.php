@@ -14,7 +14,12 @@
 			$this->validateEmail($em, $em2);
 			$this->validatePassword($pw, $pw2);
 
-
+			if(empty($this->errorArray) == true) {
+				//Insert into db
+				return true;
+			} else {
+				return false;
+			}
 
     	}
 
