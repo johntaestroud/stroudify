@@ -8,8 +8,8 @@ function sanitizeFormPassword($inputText) {
 }
 
 function sanitizeFormUsername($inputText) {
-	$username = strip_tags($username);
-	$username = str_replace(" ", "", $username);//find & replace every space
+	$inputText = strip_tags($inputText);
+	$inputText = str_replace(" ", "", $inputText);//find & replace every space
 	return $inputText;
 }
 
@@ -19,9 +19,6 @@ function sanitizeFormString($inputText) {
 	$inputText = ucfirst(strtolower($inputText));// converts all strings to lowercase first and then uppercase
 	return $inputText;
 }
-
-
-
 
 
 if(isset($_POST['registerButton'])) {
@@ -34,7 +31,7 @@ if(isset($_POST['registerButton'])) {
 	$password = sanitizeFormPassword($_POST['password']);
 	$password2 = sanitizeFormPassword($_POST['password2']);	
 
-
+	$account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
 
 }
 
