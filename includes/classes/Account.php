@@ -45,7 +45,7 @@
 
 
     	//can only be called within this class
-    	private funtion validateUsername($un) {
+    	private function validateUsername($un) {
     		
     		if(strlen($un) > 25 || strlen($un) < 5) {
     			array_push($this->errorArray, Constants::$usernameCharacters);
@@ -55,7 +55,7 @@
     		//TODO: check if username exists
 		}
 
-		private funtion validateFirstName($fn) {
+		private function validateFirstName($fn) {
 
 			if(strlen($fn) > 25 || strlen($fn) < 2) {
     			array_push($this->errorArray, Constants::$firstNameCharacters);
@@ -63,7 +63,7 @@
     		}
 		}
 
-		private funtion validateLastName($ln) {
+		private function validateLastName($ln) {
 
 			if(strlen($ln) > 25 || strlen($ln) < 2) {
     			array_push($this->errorArray, Constants::$lastNameCharacters);
@@ -72,7 +72,7 @@
 			
 		}
 
-		private funtion validateEmail($em, $em2) {
+		private function validateEmail($em, $em2) {
 			
 			if($em != $em2) {
 				array_push($this->errorArray, Constants::$emailsDoNotMatch);
@@ -87,7 +87,7 @@
 			//TODO: Check that username hasn't already been used
 		}
 
-		private funtion validatePassword($pw, $pw2) {
+		private function validatePassword($pw, $pw2) {
 			
 			if($pw != $pw2) {
 				array_push($this->errorArray, Constants::$passwordDoNotMatch);

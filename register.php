@@ -1,5 +1,5 @@
-<?php
-	include("includes/config.php");
+ <?php
+    include("includes/config.php");
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
 
@@ -16,7 +16,7 @@
 	}
 ?>
 
-
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Welcome to Stroudify</title>
@@ -73,7 +73,7 @@
 		   </p>
 
 		   <p>
-				<?php echo $account->getError(Constants::$passwordDoNotMatch); ?>
+				<?php echo $account->getError(Constants::$passwordsDoNotMatch); ?>
 				<?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?>
 				<?php echo $account->getError(Constants::$passwordCharacters); ?>
 
