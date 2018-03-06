@@ -13,12 +13,12 @@
     		$this->validateUsername($un);
 			$this->validateFirstName($fn);
 			$this->validateLastName($ln);
-			$this->validateEmail($em, $em2);
-			$this->validatePassword($pw, $pw2);
+			$this->validateEmails($em, $em2);
+			$this->validatePasswords($pw, $pw2);
 
 			if(empty($this->errorArray) == true) {
-				//Insert into db
-				return insertUserDetails($un, $fn, $ln, $em, $pw);
+				//Insert into db/refers to this class instance
+				return $this->insertUserDetails($un, $fn, $ln, $em, $pw);
 			} else {
 				return false;
 			}
@@ -33,15 +33,14 @@
     	}
     	
     	private function insertUserDetails($un, $fn, $ln, $em, $pw) {
-    		$encryptedPw = md5($pw);
+    		$encryptedPw = md5($pw);//Password encryption
     		$profilePic = "assets/images/profile-pics/lady.jpg";
     		$date = date("Y-m-d");
-
-    		$result = mysqli_query($this->con, "INSERT INTO users VALUES ('','$un', '$fn', '$ln', '$encryptedPw', '$date', '$profilePic')");
+    		echo "INSERT INTO users VALUES ('','$un', '$fn', '$ln', '$em', $encryptedPw', '$date', '$profilePic')";
+    		$result = mysqli_query($this->con, "INSERT INTO users VALUES ('','$un', '$fn', '$ln', '$em', $encryptedPw', '$date', '$profilePic')");
 
     		return $result;
     	}
-
 
 
     	//can only be called within this class
@@ -72,7 +71,7 @@
 			
 		}
 
-		private function validateEmail($em, $em2) {
+		private function validateEmails($em, $em2) {
 			
 			if($em != $em2) {
 				array_push($this->errorArray, Constants::$emailsDoNotMatch);
@@ -87,7 +86,7 @@
 			//TODO: Check that username hasn't already been used
 		}
 
-		private function validatePassword($pw, $pw2) {
+		private function validatePasswords($pw, $pw2) {
 			
 			if($pw != $pw2) {
 				array_push($this->errorArray, Constants::$passwordDoNotMatch);
