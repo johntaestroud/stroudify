@@ -36,9 +36,8 @@
     		$encryptedPw = md5($pw);//Password encryption
     		$profilePic = "assets/images/profile-pics/lady.jpg";
     		$date = date("Y-m-d");
-
-    		$result = mysqli_query($this->con, "INSERT INTO users VALUES ('','$un', '$fn', '$ln', '$em', $encryptedPw', '$date', '$profilePic')");
-
+            echo "INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$encryptedPw', '$date', '$profilePic'";
+            $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$encryptedPw', '$date', '$profilePic')");
     		return $result;
     	}
 
@@ -87,7 +86,7 @@
 				return;
 			}
 
-			$checkEmailQuery = mysqli_query($this->con, "SELECT username FROM users WHERE email='$em'");
+			$checkEmailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'");
     		if(mysqli_num_rows($checkEmailQuery) != 0) {
     			array_push($this->errorArray, Constants::$emailTaken);
     			return;
