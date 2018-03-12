@@ -1,7 +1,7 @@
 <?php
 	ob_start();
 
-	$timezone = date_default_timezone_set('America/Los_Angeles');
+	$timezone = date_default_timezone_set('America/New_York');
 
 	$con = mysqli_connect("localhost", "root", "root", "stroudify");
 

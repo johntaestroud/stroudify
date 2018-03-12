@@ -36,7 +36,7 @@
     		$encryptedPw = md5($pw);//Password encryption
     		$profilePic = "assets/images/profile-pics/lady.jpg";
     		$date = date("Y-m-d");
-    		echo "INSERT INTO users VALUES ('','$un', '$fn', '$ln', '$em', $encryptedPw', '$date', '$profilePic')";
+
     		$result = mysqli_query($this->con, "INSERT INTO users VALUES ('','$un', '$fn', '$ln', '$em', $encryptedPw', '$date', '$profilePic')");
 
     		return $result;
@@ -51,7 +51,11 @@
     			return;
     		}
 
-    		//TODO: check if username exists
+    		$checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM users WHERE username='$un'");
+    		if(mysqli_num_rows($checkUsernameQuery) != 0) {
+    			array_push($this->errorArray, Constants::$usernameTaken);
+    			return;
+    		}
 		}
 
 		private function validateFirstName($fn) {
@@ -83,7 +87,11 @@
 				return;
 			}
 
-			//TODO: Check that username hasn't already been used
+			$checkEmailQuery = mysqli_query($this->con, "SELECT username FROM users WHERE email='$em'");
+    		if(mysqli_num_rows($checkEmailQuery) != 0) {
+    			array_push($this->errorArray, Constants::$emailTaken);
+    			return;
+    		}
 		}
 
 		private function validatePasswords($pw, $pw2) {
