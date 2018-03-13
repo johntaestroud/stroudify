@@ -22,6 +22,49 @@ if(isset($_SESSION['userLoggedIn'])) {
 
 	<div id="nowPlayingContainer">
 		<div id="nowPlayingBar">
+			<div id="nowPlayingLeft">
+				
+			</div>
+
+			<div id="nowPlayingCenter">
+				
+				<div class="content playerControls">
+
+					<div class="buttons">
+
+						<button class="controlButton shuffle" title="shuffle button">
+							<img src="assets/images/icons/shuffle.png" alt="shuffle">
+						</button>
+
+						<button class="controlButton prev" title="previous button">
+							<img src="assets/images/icons/prev.png" alt="prev">
+						</button>
+
+						<button class="controlButton play" title="play button">
+							<img src="assets/images/icons/play.png" alt="play">
+						</button>
+
+						<button class="controlButton pause" title="pause button" style="display: none;">
+							<img src="assets/images/icons/pause.png" alt="pause">
+						</button>
+
+						<button class="controlButton next" title="next button">
+							<img src="assets/images/icons/next.png" alt="next">
+						</button>
+
+						<button class="controlButton repeat" title="repeat button">
+							<img src="assets/images/icons/repeat.png" alt="repeat">
+						</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div id="nowPlayingRight">
+				
+			</div>
 
 		</div>
 	</div>		
