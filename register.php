@@ -53,7 +53,7 @@
 					<p>
 					 <?php echo $account->getError(Constants::$loginFailed); ?>
 					 <label for="loginUsername">Username</label>
-					 <input id="loginUsername" name="loginUsername" type="text" placeholder="Username" required>
+					 <input id="loginUsername" name="loginUsername" type="text" placeholder="Username" value="<?php getInputValue('loginUsername') ?>" required>
 				   </p>
 
 				   <p>
@@ -75,19 +75,19 @@
 						<?php echo $account->getError(Constants::$usernameCharacters); ?>
 						<?php echo $account->getError(Constants::$usernameTaken); ?>
 					 <label for="username">Username</label>
-					 <input id="username" name="username" type="text" placeholder="Username" value="<?php echo getInputValue('username'); ?>" required>
+					 <input id="username" name="username" type="text" placeholder="Username" value="<?php echo getInputValue('username') ?>" required>
 				   </p>
 
 				   <p>
 						<?php echo $account->getError(Constants::$firstNameCharacters); ?>
 					 <label for="firstName">First name</label>
-					 <input id="firstName" name="firstName" type="text" placeholder="First Name" value="<?php getInputValue('firstName'); ?>"required>
+					 <input id="firstName" name="firstName" type="text" placeholder="First Name" value="<?php getInputValue('firstName') ?>"required>
 				   </p>
 
 				   <p>
 						<?php echo $account->getError(Constants::$lastNameCharacters); ?>
 					 <label for="lastName">Last Name</label>
-					 <input id="lastName" name="lastName" type="text" placeholder="Last Name" value="<?php getInputValue('lastName'); ?>" required>
+					 <input id="lastName" name="lastName" type="text" placeholder="Last Name" value="<?php getInputValue('lastName') ?>" required>
 				   </p>
 
 				   <p>
@@ -95,12 +95,12 @@
 						<?php echo $account->getError(Constants::$emailInvalid); ?>
 						<?php echo $account->getError(Constants::$emailTaken); ?>
 					 <label for="email">Email</label>
-					 <input id="email" name="email" type="email" placeholder="johndoe@gmail" value="<?php getInputValue('email'); ?>" required>
+					 <input id="email" name="email" type="email" placeholder="johndoe@gmail" value="<?php getInputValue('email') ?>" required>
 				   </p>
 
 				   <p>
 					 <label for="email2">Confirm Email</label>
-					 <input id="email2" name="email2" type="email" placeholder="johndoe@gmail" value="<?php getInputValue('email2'); ?>" required>
+					 <input id="email2" name="email2" type="email" placeholder="johndoe@gmail" value="<?php getInputValue('email2') ?>" required>
 				   </p>
 
 				   <p>
@@ -129,7 +129,7 @@
 
 			<div id="loginText">
 				<h1>The perfect place for music heaven</h1>
-				<h2>Listen to loads of songs for free</h2>
+				<h2>Enjoy music for free!</h2>
 				<ul>
 					<li>Create your own playlist</li>
 					<li>Follow your favorite artists</li>
