@@ -1,5 +1,6 @@
 <?php
 	ob_start();
+	session_start(); #enables the use of sessions
 
 	$timezone = date_default_timezone_set('America/New_York');
 
