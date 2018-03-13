@@ -21,8 +21,29 @@
 <head>
 	<title>Welcome to Stroudify</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="assets/js/register.js"></script>
 </head>
 <body>
+	<?php
+
+	if(isset($_POST['registerButton'])) {
+		echo '<script>
+				  $(document).ready(function() {
+				    $("#loginForm").hide();
+				    $("#registerForm").show();
+		          });
+	         </script>';
+	} else {
+		echo '<script>
+				  $(document).ready(function() {
+				    $("#loginForm").show();
+				    $("#registerForm").hide();
+		          });
+	         </script>';
+	}
+	?>
+	
 	<div id="background">
 
 		<div id="loginContainer">
@@ -41,6 +62,10 @@
 				   </p>
 
 				  <button type="submit" name="loginButton">Log in</button>
+
+				  <div class="hasAccountText" style="font-size: 12px; font-weight: bold;">
+				  	  <span id="hideLogin">Don't have an account yet? Signup here.</span>
+				  </div>
 
 				</form>
 
@@ -92,6 +117,10 @@
 				   </p>
 
 				  <button type="submit" name="registerButton">Sign Up</button>
+
+				  <div class="hasAccountText">
+				  	  <span id="hideRegister">Already have an account? Log in here.</span>
+				  </div>
 
 				</form>
 

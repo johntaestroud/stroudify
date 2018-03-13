@@ -95,13 +95,19 @@ body {
 	cursor:pointer;
 }
 
+.hasAccountText {
+	font-weight: bold;
+    font-size: 12px;
+}
 
+.hasAccountText {
+	text-align: center;
+}
 
-
-
-
-
-
+#registerForm,
+#loginForm {
+	display: none;
+}
 
 
 
