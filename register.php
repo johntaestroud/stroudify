@@ -63,7 +63,7 @@
 
 				  <button type="submit" name="loginButton">Log in</button>
 
-				  <div class="hasAccountText" style="font-size: 12px; font-weight: bold;">
+				  <div class="hasAccountText">
 				  	  <span id="hideLogin">Don't have an account yet? Signup here.</span>
 				  </div>
 
