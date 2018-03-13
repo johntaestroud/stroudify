@@ -126,6 +126,17 @@
 
 
 			</div>
+
+			<div id="loginText">
+				<h1>The perfect place for music heaven</h1>
+				<h2>Listen to loads of songs for free</h2>
+				<ul>
+					<li>Create your own playlist</li>
+					<li>Follow your favorite artists</li>
+					<li>Discover new music</li>
+				</ul>
+			</div>
+
 		<div>
 	</div>
 
