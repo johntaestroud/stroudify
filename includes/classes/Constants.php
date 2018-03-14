@@ -13,8 +13,6 @@ class Constants {
 	public static $usernameTaken = "This username already exists";
 	public static $loginFailed = "Your username or password was incorrect";
 
-
-
 }
 
 

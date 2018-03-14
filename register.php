@@ -128,12 +128,12 @@
 			</div>
 
 			<div id="loginText">
-				<h1>The perfect place for music heaven</h1>
-				<h2>Enjoy music for free!</h2>
+				<h1>The perfect place for music heaven.</h1>
+				<h2>Enjoy free music!</h2>
 				<ul>
-					<li>Create your own playlist</li>
-					<li>Follow your favorite artists</li>
-					<li>Discover new music</li>
+					<li>Create your own playlist.</li>
+					<li>Follow your favorite artists.</li>
+					<li>Discover new music.</li>
 				</ul>
 			</div>
 

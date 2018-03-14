@@ -58,6 +58,21 @@ if(isset($_SESSION['userLoggedIn'])) {
 
 					</div>
 
+					<div class="playbackBar">
+						
+						<span class="progressTime current">0.00</span>
+
+						<div class="progressBar">
+							<div class="progressBarBg">
+								<div class="progress"></div>
+							</div>
+						</div>
+
+						<span class="progressTime remaining">0.00</span>
+
+
+					</div>
+
 				</div>
 
 			</div>
