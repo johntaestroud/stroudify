@@ -19,6 +19,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!--music by:  https://www.bensound.com - icons by: https://icons8.com/-->
 	<title>Welcome to Stroudify</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
