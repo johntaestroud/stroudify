@@ -25,10 +25,20 @@ if(isset($_SESSION['userLoggedIn'])) {
 			<div id="nowPlayingLeft">
 				<div class="content">
 					<span class="albumLink">
-
-						<img src="https://uicradio.files.wordpress.com/2016/03/dvsn.png" class="albumArtwork">
-		
+						<img src="https://uicradio.files.wordpress.com/2016/03/dvsn.png" class="albumArtwork">	
 					</span>
+
+					<div class="trackInfo">
+
+						<span class="trackName">
+							<span>Too Deep</span>
+						</span>
+
+						<span class="artistName">
+							<span>dvsn</span>
+						</span>
+					</div>
+
 				</div>
 			</div>
 
