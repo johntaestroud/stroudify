@@ -23,9 +23,9 @@ if(isset($_SESSION['userLoggedIn'])) {
 </head>
 <body>
 
-	<div class="mainContainer">
+	<div id="mainContainer">
 
-		<div class="topContainer">
+		<div id="topContainer">
 			
 			<?php include("includes/navBarContainer.php"); ?>
 
