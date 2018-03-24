@@ -7,10 +7,17 @@ function formatTime(seconds) {
 	var seconds = time - (minutes * 60);
 
 	var extraZero = (seconds < 10) ? "0" : "";
-	
+
 	return minutes + ":" + extraZero + seconds;
 }
 
+function updateTimeProgressBar(audio) {
+	$(".progressTime.current").text(formatTime(audio.currentTime));
+	$(".progressTime.remaining").text(formatTime(audio.duration - audio.currentTime)); //total sec in song - sec you currently elapsed in a song
+
+	var progress = audio.currentTime / audio.duration * 100;
+	$(".playbackBar .progress").css("width", progress + "%");
+}
 function Audio() {
 	
 	this.currentlyPlaying;
@@ -21,6 +28,12 @@ function Audio() {
 		//referring to the obj the event was called on
 		var duration = formatTime(this.duration)
 		$(".progressTime.remaining").text(duration);
+	});
+
+	this.audio.addEventListener("timeupdate", function() {
+		if(this.duration) {
+			updateTimeProgressBar(this);
+		}
 	});
 
 	this.setTrack = function(track) {
