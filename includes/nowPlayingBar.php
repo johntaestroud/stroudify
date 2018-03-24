@@ -24,7 +24,6 @@ $jsonArray = json_encode($resultArray);
 		$.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
 
 			var track = JSON.parse(data); //convert to an obj
-
 			$('.trackName span').text(track.title);
 
 			$.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data) {
@@ -38,11 +37,11 @@ $jsonArray = json_encode($resultArray);
 				});
 
 
-			audioElement.setTrack(track.path);
-			audioElement.play();
+			audioElement.setTrack(track);
+			playSong();//audioElement.play();
 		});
 
-		audioElement.setTrack("assets/music/bensound-memories.mp3");
+		//audioElement.setTrack("assets/music/bensound-memories.mp3");
 
 		if(play) {
 			audioElement.play();
@@ -51,6 +50,13 @@ $jsonArray = json_encode($resultArray);
 	}
 
 	function playSong() {
+
+		if(audioElement.audio.currentTime == 0) {
+			$.post("includes/handlers/ajax/updatePlays.php", { songId: audioElement.currentlyPlaying.id });
+	
+	}
+
+
 		$(".controlButton.play").hide();
 		$(".controlButton.pause").show();
 		audioElement.play();

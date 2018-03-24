@@ -9,8 +9,9 @@ function Audio() {
 	//creating HTML element
 	this.audio = document.createElement('audio');	
 
-	this.setTrack = function(src) {
-		this.audio.src = src; 
+	this.setTrack = function(track) {
+		this.currentlyPlaying = track; //keeping track of the song currently playing everytime we set the track
+		this.audio.src = track.path; //path is the name in the db 
 	}
 
 	this.play = function() {
