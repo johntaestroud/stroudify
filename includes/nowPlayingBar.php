@@ -19,6 +19,11 @@ $jsonArray = json_encode($resultArray);
 		updateVolumeProgressBar(audioElement.audio);
 
 
+		$("#nowPlayingContainer").on("mousedown touchstart mousemove touchmove", function(e) {
+			e.preventDefault();
+		}) // on any of these events do function (preventing controls from highlighting)
+
+
 		$(".playbackBar .progressBar").mousedown(function() {
 			mouseDown = true;
 		});
