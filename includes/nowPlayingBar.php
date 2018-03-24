@@ -86,7 +86,6 @@ $jsonArray = json_encode($resultArray);
 	}
 
 	function nextSong() {
-
 		if(repeat == true) {
 			audioElement.setTime(0);
 			playSong();
