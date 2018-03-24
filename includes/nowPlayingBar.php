@@ -21,6 +21,23 @@ $jsonArray = json_encode($resultArray);
 
 	function setTrack(trackId, newPlaylist, play) {
 
+		$.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+
+			var track = JSON.parse(data); //convert to an obj
+
+			$('.trackName span').text(track.title);
+
+			$.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data) {
+				   var artist = JSON.parse(data);
+
+				   $('.artistName span').text(artist.name);
+				});
+
+
+			audioElement.setTrack(track.path);
+			audioElement.play();
+		});
+
 		audioElement.setTrack("assets/music/bensound-memories.mp3");
 
 		if(play) {
@@ -55,11 +72,11 @@ $jsonArray = json_encode($resultArray);
 				<div class="trackInfo">
 
 					<span class="trackName">
-						<span>Too Deep</span>
+						<span></span>
 					</span>
 
 					<span class="artistName">
-						<span>dvsn</span>
+						<span></span>
 					</span>
 				</div>
 
