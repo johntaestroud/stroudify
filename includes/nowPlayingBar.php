@@ -17,7 +17,34 @@ $jsonArray = json_encode($resultArray);
 		audioElement = new Audio();
 		setTrack(currentPlaylist[0], currentPlaylist, false);
 
+
+		$(".playbackBar .progressBar").mousedown(function() {
+			mouseDown = true;
+		});
+
+		$(".playbackBar .progressBar").mousemove(function(e) {
+			if(mouseDown == true) {
+				//set time of song, depending on position of mouse
+				timeFromOffset(e, this); //this refers to the obj that called the event
+			}
+		});
+
+		$(".playbackBar .progressBar").mouseup(function(e) {
+			timeFromOffset(e, this); 
+		});
+
+		$(document).mouseup(function() {
+			mouseDown = false;
+		})
+
+
 	});
+
+	function timeFromOffset(mouse, progressBar) {
+		var percentage = mouse.offsetX / $(progressBar).width() * 100;
+		var seconds = audioElement.audio.duration * (percentage / 100);
+		audioElement.setTime(seconds);
+	}
 
 	function setTrack(trackId, newPlaylist, play) {
 
