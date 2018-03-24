@@ -93,6 +93,17 @@ $jsonArray = json_encode($resultArray);
 		setTrack(trackToPlay, currentPlaylist, true);
 	}
 
+	function setRepeat() {
+		repeat = !repeat;
+		var imageName = repeat ? "repeat-active.png" : "repeat.png";
+		$(".controlButton.repeat img").attr("src", "assets/images/icons/" + imageName);
+		// if(repeat == true) {
+		// 	repeat = false;
+		// } else {
+		// 	repeat = true;
+		// }
+	}
+
 	function setTrack(trackId, newPlaylist, play) {
 
 		currentIndex = currentPlaylist.indexOf(trackId);
@@ -196,7 +207,7 @@ $jsonArray = json_encode($resultArray);
 						<img src="assets/images/icons/next.png" alt="next">
 					</button>
 
-					<button class="controlButton repeat" title="repeat button">
+					<button class="controlButton repeat" title="repeat button" onclick="setRepeat()">
 						<img src="assets/images/icons/repeat.png" alt="repeat">
 					</button>
 
