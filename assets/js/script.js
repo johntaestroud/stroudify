@@ -32,6 +32,10 @@ function Audio() {
 	//creating HTML element
 	this.audio = document.createElement('audio');	
 
+	this.audio.addEventListener("ended", function() {
+		nextSong();
+	}); //taking it to the next song
+
 	this.audio.addEventListener("canplay", function() {
 		//referring to the obj the event was called on
 		var duration = formatTime(this.duration)
