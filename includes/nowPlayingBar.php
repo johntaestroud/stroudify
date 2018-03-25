@@ -179,7 +179,7 @@ $jsonArray = json_encode($resultArray);
 
 
 			audioElement.setTrack(track);
-			playSong();//audioElement.play();
+			//playSong();//audioElement.play();
 		});
 
 		//audioElement.setTrack("assets/music/bensound-memories.mp3");
